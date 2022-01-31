@@ -1,0 +1,41 @@
+<project name = "Project 1a" default="compile" basedir=".">
+    <description>
+        CSCI 310 Project 1a
+    </description>
+
+    <property name="source.dir" location="src"/>
+    <property name="build.dir" location="bin"/>
+    <property name="doc.dir" location="doc"/>
+    <property name="dist.dir" location="dist"/>
+
+    <target name="init" description="Set up Project Directories">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${doc.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+    </target>
+
+    <target name="compile" depends="init" description="Compile Java sources">
+        <javac srcdir="${source.dir}" destdir="${build.dir}"/>
+    </target>
+
+    <target name="doc" depends="init" description="Generate Documentation">
+        <javadoc sourcepath="${source.dir}" destdir="${doc.dir}"/>
+    </target>
+
+    <target name="dist" depends="compile" description="Transform Classes to A Jar File">
+        <jar jarfile="${dist.dir}/Project1a.jar" basedir="${build.dir}"/>
+    </target>
+
+    <target name="test" depends="compile" description="Run Junit Tests">
+        <javadoc sourcepath="${source.dir}" destdir="${doc.dir}"/>
+    </target>
+
+    <target name="clean" depends="init" description="Tidy up the workspace">
+        <delete dir="${build.dir}"/>
+        <delete dir="${doc.dir}"/>
+        <delete dir="${dist.dir}"/>
+        <delete>
+            <fileset defaultexcludes="no" dir="${source.dir}" includes="**/*~"/>
+        </delete>
+    </target>
+</project>
