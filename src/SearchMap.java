@@ -1,8 +1,18 @@
 import java.util.*;
 import java.io.*;
 
+/**
+ * Search Map uses FlightMap to get user input and output file name,
+ * and print out all reachable cities from the origin city
+ */
 public class SearchMap{
 
+    /**
+     * main method to get input and output file
+     * print out all reachable cities from the origin city in output file
+     *
+     * @param args command line arguments, input file name and output file name
+     */
     public static void main(String args[]) {
         // get user's input for input file and output file name from command
         FlightMap fm = new FlightMap(args[0],args[1]);
