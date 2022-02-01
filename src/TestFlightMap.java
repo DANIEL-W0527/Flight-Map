@@ -20,9 +20,9 @@ public class TestFlightMap{
     @Test
     public void constructorTest1(){
         // test if the constructor could create data structures and store the input and output file
-        fm = new FlightMap("inputFile1.txt","outputfile1.txt");
-        assertEquals("inputFile1.txt",fm.inputFileName);
-        assertEquals("outputFile1.txt",fm.outputFileName);
+        fm = new FlightMap("inputfile1.txt","outputfile1.txt");
+        assertEquals("inputfile1.txt",fm.inputFileName);
+        assertEquals("outputfile1.txt",fm.outputFileName);
         assertEquals(route, fm.routeMap);
         assertEquals(cost, fm.costMap);
         assertEquals(cities, fm.citiesSet);
@@ -31,9 +31,9 @@ public class TestFlightMap{
     @Test
     public void constructorTest2(){
         // test if the constructor could create data structures and store the input and output file
-        fm = new FlightMap("inputFile2.txt","outputfile2.txt");
-        assertEquals("inputFile2.txt",fm.inputFileName);
-        assertEquals("outputFile2.txt",fm.outputFileName);
+        fm = new FlightMap("inputfile2.txt","outputfile2.txt");
+        assertEquals("inputfile2.txt",fm.inputFileName);
+        assertEquals("outputfile2.txt",fm.outputFileName);
         assertEquals(route, fm.routeMap);
         assertEquals(cost, fm.costMap);
         assertEquals(cities, fm.citiesSet);
