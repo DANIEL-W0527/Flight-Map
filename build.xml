@@ -22,7 +22,7 @@
     </target>
 
     <target name="compile" depends="init" description="Compile Java sources">
-        <javac srcdir="${source.dir}" destdir="${build.dir}" includes="SearchMap.java" includeantruntime="false" classpathref="build.classpath"/>
+        <javac srcdir="${source.dir}" destdir="${build.dir}" includeantruntime="false" classpathref="build.classpath"/>
     </target>
 
     <target name="doc" depends="init" description="Generate Documentation">
@@ -30,7 +30,7 @@
     </target>
 
     <target name="dist" depends="compile" description="Transform Classes to A Jar File">
-        <jar jarfile="${dist.dir}/Project1a.jar" basedir="${build.dir}"/>
+        <jar destfile="${dist.dir}/Project1a.jar" basedir="${build.dir}"/>
     </target>
 
     <target name="test" depends="compile" description="Run Junit Tests">
