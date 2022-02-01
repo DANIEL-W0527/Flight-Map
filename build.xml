@@ -26,7 +26,12 @@
     </target>
 
     <target name="doc" depends="init" description="Generate Documentation">
-        <javadoc sourcepath="${source.dir}" destdir="${doc.dir}"/>
+        <javadoc sourcepath="${source.dir}" destdir="${doc.dir}">
+            <fileset dir="${source.dir}">
+                <include name="*.java"/>
+                <exclude name="Test*.java"/>
+            </fileset>
+        </javadoc>
     </target>
 
     <target name="dist" depends="compile" description="Transform Classes to A Jar File">
