@@ -11,6 +11,7 @@ import static org.junit.Assert.*;
 public class TestSearchMap{
     @Test
     public void mainTest1(){
+        // test if we get the expected output file using inputfile1.txt
         SearchMap.main(new String[]{"inputfile1.txt","outputfile1.txt"});
         try {
             byte[] fileExpectedBytes = Files.readAllBytes(Paths.get("outputfileExpected1.txt"));
@@ -24,6 +25,7 @@ public class TestSearchMap{
     }
     @Test
     public void mainTest2(){
+        // test if we get the expected output file using inputfile2.txt
         SearchMap.main(new String[]{"inputfile2.txt","outputfile2.txt"});
         try {
             byte[] fileExpectedBytes = Files.readAllBytes(Paths.get("outputfileExpected2.txt"));

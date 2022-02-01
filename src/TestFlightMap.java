@@ -12,14 +12,17 @@ public class TestFlightMap{
     Set<String> cities;
     @Before
     public void initialize(){
+        // create the fixture for testing
         route = new TreeMap<String,LinkedList<String>>();
         cost = new TreeMap<String,Integer>();
         cities = new TreeSet<String>();
     }
     @Test
     public void constructorTest1(){
+        // test if the constructor could create data structures and store the input and output file
         fm = new FlightMap("inputFile1.txt","outputfile1.txt");
         assertEquals("inputFile1.txt",fm.inputFileName);
+        assertEquals("outputFile1.txt",fm.outputFileName);
         assertEquals(route, fm.routeMap);
         assertEquals(cost, fm.costMap);
         assertEquals(cities, fm.citiesSet);
@@ -27,14 +30,17 @@ public class TestFlightMap{
 
     @Test
     public void constructorTest2(){
+        // test if the constructor could create data structures and store the input and output file
         fm = new FlightMap("inputFile2.txt","outputfile2.txt");
         assertEquals("inputFile2.txt",fm.inputFileName);
+        assertEquals("outputFile2.txt",fm.outputFileName);
         assertEquals(route, fm.routeMap);
         assertEquals(cost, fm.costMap);
         assertEquals(cities, fm.citiesSet);
     }
     @Test
     public void readInputFileTest1(){
+        // test if maps are stored in the FlightMap for inputfile1.txt
         LinkedList<String> plist = new LinkedList<String>();
         plist.add("W");
         plist.add("R");
@@ -100,6 +106,7 @@ public class TestFlightMap{
     }
     @Test
     public void readInputFileTest2(){
+        // test if maps are stored in the FlightMap for inputfile2.txt
         route.clear();
         cost.clear();
         cities.clear();
@@ -164,4 +171,5 @@ public class TestFlightMap{
         assertEquals(cities, fm.citiesSet);
         assertEquals("P", fm.originCity);
     }
+    // search function are tested in TestSearchMap
 }

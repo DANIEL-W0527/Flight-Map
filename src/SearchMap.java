@@ -12,7 +12,9 @@ public class SearchMap{
             // print the table to the output file with all reachable cities
             PrintWriter output = new PrintWriter(args[1]);
             output.println(String.format("%-15s %-25s %-10s", "Destination", "Flight Route from " + fm.originCity, "Total Cost"));
+            // search for reachable cities from the origin city
             fm.search(fm.originCity, fm.originCity, 0, output);
+            // close the printwriter
             output.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
